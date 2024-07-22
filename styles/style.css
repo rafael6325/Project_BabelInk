@@ -5,6 +5,7 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
+  padding-top: 40px;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
@@ -15,6 +16,7 @@ body {
   left: 20px;
   display: flex;
   align-items: center;
+  padding: 10px;
 }
 
 .logo {
@@ -33,10 +35,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -150px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px #00000052;
   padding: 20px;
+  max-width: 600px;
+}
+
+#postArea {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #00000052;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  z-index: 1000;
+  margin-bottom: 20px;
+}
+
+#postText {
+  resize: none;
+}
+
+#posts-content {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 350px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #00000052;
 }
 
 .image-container {
@@ -110,18 +146,6 @@ body {
   border-radius: 5px;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  padding-top: 40px; 
-  position: relative; 
-}
-
 .header {
   position: absolute;
   top: 20px;
@@ -174,7 +198,7 @@ div {
   align-items: center;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px #00000052;
   padding: 20px;
   margin-bottom: 20px;
   color: #000;
@@ -218,24 +242,30 @@ div {
 
 
 @media screen and (max-width: 600px) {
-  main {
-    border: 0;
+  body {
+    padding-top: 180px;
   }
-  main div {
-    display: none;
+
+  #postArea {
+    max-width: 80%;
+    padding: 15px;
   }
-  main div {
-    margin-bottom: 10px;
-    display: block;
-    border: 1px solid #ddd;
+
+  .post-content {
+    max-width: 80%;
+    padding: 15px;
   }
-  main div {
-    display: block;
-    text-align: right;
+
+  .main-container {
+    width: 80%;
+    padding: 10px;
   }
-  main div::before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-  } 
+
+  .form-group textarea {
+    width: 80%;
+  }
+
+  .image-container img {
+    width: 70%;
+  }
 }

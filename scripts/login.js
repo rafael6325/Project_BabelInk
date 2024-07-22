@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+  loadPosts();
+  loadUser();
+});
+
 function showRegisterForm() {
   document.getElementById('login-form').classList.add('hidden');
   document.getElementById('register-form').classList.remove('hidden');
@@ -34,10 +39,9 @@ function login() {
   if (user) {
     document.getElementById('main-page-posts').classList.remove('hidden');
     document.getElementById('login-page-form').classList.add('hidden');
-    document.addEventListener('DOMContentLoaded', (event) => {
-      loadPosts();
-      loadUser();
-    });
+    document.getElementById('posts-content').classList.remove('hidden');
+    loadPosts();
+    loadUser();
   } else {
       document.getElementById('login-message').textContent = 'Usuário não cadastrado ou senha incorreta.';
   }
@@ -91,8 +95,12 @@ function validateEmail(email) {
 
 function loadUser() {
   const user = JSON.parse(localStorage.getItem('users'));
-  const loggedUser = user[user.length - 1].name;
-  return loggedUser;
+  if (user && user.length > 0) {
+    const loggedUser = user[user.length - 1].name;
+    return loggedUser;
+  }
+
+  return null;
 };
 
 function clearMessages() {
