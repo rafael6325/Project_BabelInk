@@ -40,6 +40,7 @@ function login() {
     document.getElementById('main-page-posts').classList.remove('hidden');
     document.getElementById('login-page-form').classList.add('hidden');
     document.getElementById('posts-content').classList.remove('hidden');
+    document.getElementById('mainPosts').classList.remove('hidden');
     loadPosts();
     loadUser();
   } else {
