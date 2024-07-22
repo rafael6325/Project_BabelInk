@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="./imgs/pageIcon.jpeg" alt="icone-torre-de-babel" class="icon"> BABELINK
+        </div>
+    </div>
+    <div class="main-container" id="login-page-form">
+        <div class="image-container">
+            <img src="./imgs/loginImg.png" alt="torre-de-babel">
+            <h2>Conectando o mundo</h2>
+        </div>
+        <div class="form-wrapper">
+            <div id="login-form" class="form-container">
+                <h2>Login</h2>
+                <input type="text" id="login-email" placeholder="Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <button onclick="showRegisterForm()">Cadastrar-se</button>
+                <button onclick="showForgotPasswordForm()">Esqueci a senha</button>
+                <p id="login-message" class="message"></p>
+            </div>
+            
+            <div id="register-form" class="form-container hidden">
+                <h2>Cadastrar-se</h2>
+                <input type="text" id="register-name" placeholder="Nome">
+                <input type="text" id="register-email" placeholder="Email">
+                <input type="password" id="register-password" placeholder="Senha">
+                <input type="password" id="confirm-password" placeholder="Confirmar Senha">
+                <button onclick="register()">Cadastrar</button>
+                <button onclick="showLoginForm()">Voltar para Login</button>
+                <p id="register-message" class="message"></p>
+            </div>
+            
+            <div id="forgot-password-form" class="form-container hidden">
+                <h2>Esqueci a Senha</h2>
+                <input type="text" id="forgot-email" placeholder="Email">
+                <button onclick="forgotPassword()">Enviar</button>
+                <button onclick="showLoginForm()">Voltar para Login</button>
+                <p id="forgot-message" class="message"></p>
+            </div>
+        </div>
+    </div>
+    <div id="main-page-posts" class="hidden">
+    <div id="navDiv">
+        <nav>
+          <button>
+            <img src="" alt="">
+          </button>
+          <div class="nav-bar hidden">
+            <ul>
+              <li class="nav-item">
+                <button onclick="">Inicio</button>
+              </li>
+              <li class="nav-item">
+                <button onclick="">Perfil</button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <main>
+      <div class="container">
+            <div class="card">
+              <div class="card-body">
+                <h2>Postar</h2>
+                <form>
+                  <div class="form-group">
+                    <label for="postText" required="required">Text</label>
+                    <textarea class="form-control" id="postText" rows="3"></textarea>
+                    <label for="postArchive">arquivo</label>
+                    <input type="file" class="form-control-file" id="postArchive">
+                    <div id="nullpost-message"></div>
+                  </div>
+                  <div id="imageContainer"></div>
+                  <button type="submit" class="btn" onclick="createPost()">Publicar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div id="mainPosts">
+            </div>
+          </div>
+        </div>
+      </div>
+      </main>
+
+    <script src="./scripts/login.js"></script>
+</body>
+</html>
